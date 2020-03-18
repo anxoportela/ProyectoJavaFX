@@ -48,13 +48,13 @@
 		</toggleGroup>
 	</RadioButton>
 	<RadioButton fx:id="rdbNo" layoutX="100.0" layoutY="255.0" mnemonicParsing="false" text="No" toggleGroup="$grp1" />
-    <TableView onMouseClicked="#seleccionar" fx:id="tblPersonas" layoutX="220.0" layoutY="67.0" prefHeight="306.0" prefWidth="550.0">
+    	<TableView onMouseClicked="#seleccionar" fx:id="tblPersonas" layoutX="220.0" layoutY="67.0" prefHeight="306.0" prefWidth="550.0">
 		<columns>
 			<TableColumn fx:id="colTitulo" prefWidth="200.0" text="Título" />
-            <TableColumn fx:id="colGenero" prefWidth="124.0" text="Género" />
-            <TableColumn fx:id="colPlataforma" prefWidth="124.0" text="Plataforma" />
-            <TableColumn fx:id="colMultijugador" prefWidth="102.0" text="Multijugador" />
-        </columns>
+            		<TableColumn fx:id="colGenero" prefWidth="124.0" text="Género" />
+            		<TableColumn fx:id="colPlataforma" prefWidth="124.0" text="Plataforma" />
+            		<TableColumn fx:id="colMultijugador" prefWidth="102.0" text="Multijugador" />
+        	</columns>
 	</TableView>  
    </children>
 </AnchorPane>
