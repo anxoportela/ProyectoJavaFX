@@ -38,7 +38,7 @@ public class ConexionPool {
 	    
 	    private static void crearConexions(int num) {
 	        System.out.println("Creando conexións: " + num);
-	        String cadeaConexion = "jdbc:mysql://" + host + ":" + port + "/" + bd + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=" + TimeZone.getDefault().getID();
+	        String cadeaConexion = "jdbc:mysql://" + host + ":" + port + "/" + bd + "?serverTimeZone=Europe/Madrid";
 	        for (int i = 0; i < num; i++) {
 	            try {
 	                lista.add(DriverManager.getConnection(cadeaConexion, user, password));
@@ -81,8 +81,7 @@ public class ConexionPool {
 	private static void cargarPropiedades() {		
 		
 		try {
-			InputStream is = ClassLoader.getSystemResourceAsStream("com/acarballeira/bd/recursos/config.inc");
-			//InputStream is = Conexion.class.getResourceAsStream("/com/acarballeira/bd/recursos/config.inc")
+			InputStream is = ClassLoader.getSystemResourceAsStream("com/proyecto/javafx/config/config.inc");
 			Properties prop = new Properties();
 			prop.load(is);
 			user = prop.getProperty("user");
