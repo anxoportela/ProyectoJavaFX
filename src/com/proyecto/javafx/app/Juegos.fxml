@@ -10,51 +10,51 @@
 <?import javafx.scene.paint.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto.javafx.app.JuegosController">
-   <children>
-      <Button fx:id="btnAgregar" layoutX="47.0" layoutY="392.0" mnemonicParsing="false" onAction="#agregarJuego" prefHeight="25.0" prefWidth="149.0" text="Agregar Juego" />
-      <Button fx:id="btnModificar" layoutX="245.0" layoutY="392.0" mnemonicParsing="false" onAction="#modificarJuego" prefHeight="25.0" prefWidth="149.0" text="Modificar Juego" />
-      <Button fx:id="btnEliminar" layoutX="440.0" layoutY="392.0" mnemonicParsing="false" onAction="#eliminarJuego" prefHeight="25.0" prefWidth="149.0" text="Eliminar Juego" />      
-      <Label layoutX="25.0" layoutY="50.0" text="Título" />
-      <Label layoutX="25.0" layoutY="110.0" text="Género" />
-      <Label layoutX="25.0" layoutY="170.0" text="Plataforma" />
-      <Label layoutX="25.0" layoutY="230.0" text="Multijugador" />
-      <TextField fx:id="txtTitulo" layoutX="25.0" layoutY="70.0" />
-      <ComboBox id="comboBoxGenero" fx:id="comboBoxGenero" value="Shooter" layoutX="25.0" layoutY="130.0">
-    	<items>
-        	<FXCollections fx:factory="observableArrayList">
-            	<String fx:value="Shooter" />
-            	<String fx:value="MMORPG" />
-            	<String fx:value="Plataformas" />
-            	<String fx:value="Aventura" />
-            	<String fx:value="Puzzles" />
-            	<String fx:value="MOBA" />
-            	<String fx:value="Estrategia" />
-        	</FXCollections>
-    	</items>
-	</ComboBox> 
-	<ComboBox id="comboBoxPlataforma" fx:id="comboBoxPlataforma" value="PC" layoutX="25.0" layoutY="190.0">
-    	<items>
-        	<FXCollections fx:factory="observableArrayList">
-            	<String fx:value="PC" />
-            	<String fx:value="PS4" />
-            	<String fx:value="XBOX" />
-            	<String fx:value="Switch" />
-        	</FXCollections>
-    	</items>
-	</ComboBox>
-	<RadioButton fx:id="rdbSi" layoutX="25.0" layoutY="255.0" mnemonicParsing="false" selected="true" text="Sí" toggleGroup="$grp1">
-		<toggleGroup>
-			<ToggleGroup fx:id="grp1" />
-		</toggleGroup>
-	</RadioButton>
-	<RadioButton fx:id="rdbNo" layoutX="100.0" layoutY="255.0" mnemonicParsing="false" text="No" toggleGroup="$grp1" />
-    	<TableView onMouseClicked="#seleccionar" fx:id="tblPersonas" layoutX="220.0" layoutY="67.0" prefHeight="306.0" prefWidth="550.0">
-		<columns>
-			<TableColumn fx:id="colTitulo" prefWidth="200.0" text="Título" />
-            		<TableColumn fx:id="colGenero" prefWidth="124.0" text="Género" />
-            		<TableColumn fx:id="colPlataforma" prefWidth="124.0" text="Plataforma" />
-            		<TableColumn fx:id="colMultijugador" prefWidth="102.0" text="Multijugador" />
-        	</columns>
-	</TableView>  
-   </children>
+	<children>
+		<Button fx:id="btnAgregar" layoutX="47.0" layoutY="392.0" mnemonicParsing="false" onAction="#agregarJuego" prefHeight="25.0" prefWidth="149.0" text="Agregar Juego" />
+      		<Button fx:id="btnModificar" layoutX="245.0" layoutY="392.0" mnemonicParsing="false" onAction="#modificarJuego" prefHeight="25.0" prefWidth="149.0" text="Modificar Juego" />
+      		<Button fx:id="btnEliminar" layoutX="440.0" layoutY="392.0" mnemonicParsing="false" onAction="#eliminarJuego" prefHeight="25.0" prefWidth="149.0" text="Eliminar Juego" />      
+      		<Label layoutX="25.0" layoutY="50.0" text="Título" />
+      		<Label layoutX="25.0" layoutY="110.0" text="Género" />
+      		<Label layoutX="25.0" layoutY="170.0" text="Plataforma" />
+      		<Label layoutX="25.0" layoutY="230.0" text="Multijugador" />
+      		<TextField fx:id="txtTitulo" layoutX="25.0" layoutY="70.0" />
+      		<ComboBox id="comboBoxGenero" fx:id="comboBoxGenero" value="Shooter" layoutX="25.0" layoutY="130.0">
+    			<items>
+        			<FXCollections fx:factory="observableArrayList">
+            				<String fx:value="Shooter" />
+            				<String fx:value="MMORPG" />
+            				<String fx:value="Plataformas" />
+            				<String fx:value="Aventura" />
+            				<String fx:value="Puzzles" />
+            				<String fx:value="MOBA" />
+            				<String fx:value="Estrategia" />
+        			</FXCollections>
+    			</items>
+		</ComboBox> 
+		<ComboBox id="comboBoxPlataforma" fx:id="comboBoxPlataforma" value="PC" layoutX="25.0" layoutY="190.0">
+    			<items>
+        			<FXCollections fx:factory="observableArrayList">
+            				<String fx:value="PC" />
+            				<String fx:value="PS4" />
+            				<String fx:value="XBOX" />
+            				<String fx:value="Switch" />
+        			</FXCollections>
+    			</items>
+		</ComboBox>
+		<RadioButton fx:id="rdbSi" layoutX="25.0" layoutY="255.0" mnemonicParsing="false" selected="true" text="Sí" toggleGroup="$grp1">
+			<toggleGroup>
+				<ToggleGroup fx:id="grp1" />
+			</toggleGroup>
+		</RadioButton>
+		<RadioButton fx:id="rdbNo" layoutX="100.0" layoutY="255.0" mnemonicParsing="false" text="No" toggleGroup="$grp1" />
+    		<TableView onMouseClicked="#seleccionar" fx:id="tblPersonas" layoutX="220.0" layoutY="67.0" prefHeight="306.0" prefWidth="550.0">
+			<columns>
+				<TableColumn fx:id="colTitulo" prefWidth="200.0" text="Título" />
+            			<TableColumn fx:id="colGenero" prefWidth="124.0" text="Género" />
+            			<TableColumn fx:id="colPlataforma" prefWidth="124.0" text="Plataforma" />
+            			<TableColumn fx:id="colMultijugador" prefWidth="102.0" text="Multijugador" />
+        		</columns>
+		</TableView>  
+	</children>
 </AnchorPane>
