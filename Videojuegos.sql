@@ -4,10 +4,10 @@ USE videojuegosdb;
 
 CREATE TABLE `videojuegosdb`.`tbl_juegos` (
   `id_juego` INT NOT NULL AUTO_INCREMENT,
-  `titulo` VARCHAR(45) NULL,
+  `titulo` VARCHAR(45) NOT NULL,
   `genero` VARCHAR(45) NULL,
   `plataforma` VARCHAR(45) NULL,
-  `multijugador` TINYINT NULL DEFAULT '0',
+  `multijugador` TINYINT NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_juego`),
   UNIQUE INDEX `id_juego_UNIQUE` (`id_juego` ASC) VISIBLE);
 
