@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -19,7 +20,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
-public class PersoaController implements Initializable {
+public class JuegosController implements Initializable {
 	
 	@FXML
 	private Button btnAgregar;
@@ -31,33 +32,36 @@ public class PersoaController implements Initializable {
 	private Button btnEliminar;
 	
 	@FXML
-	private TextField txtNombre;
+	private TextField txtTitulo;
 	
 	@FXML
-	private TextField txtApellidos;
+	private TextField txtGenero;
 	
 	@FXML
-	private TextField txtEdad;
+	private TextField txtPlataforma;
+	
+	@FXML
+	private ComboBox<String> comboBox;
 
 	@FXML
 	private TableView<Persona> tblPersonas;
 	
 	@FXML
-	private TableColumn colNombre;
+	private TableColumn colTitulo;
 	
 	@FXML
-	private TableColumn colApellidos;
+	private TableColumn colGenero;
 	
 	@FXML
-	private TableColumn colEdad;
+	private TableColumn colPlataforma;
 	
 	private ObservableList<Persona> personas;
 	
 	@FXML
-	private void agregarPersona(ActionEvent event) {
+	private void agregarJuego(ActionEvent event) {
 		
 		try {
-			Persona p = new Persona(this.txtNombre.getText(), this.txtApellidos.getText(), Integer.parseInt(this.txtEdad.getText()));
+			Persona p = new Persona(this.txtTitulo.getText(), this.txtGenero.getText(), Integer.parseInt(this.txtPlataforma.getText()));
 			this.personas.add(p);
 			this.tblPersonas.setItems(this.personas);
 		} catch (NumberFormatException e) {
@@ -74,14 +78,14 @@ public class PersoaController implements Initializable {
 	private void seleccionar(MouseEvent event) {
 		Persona p = this.tblPersonas.getSelectionModel().getSelectedItem();
 		if (p != null) {
-			this.txtNombre.setText(p.getNombreString());
-			this.txtApellidos.setText(p.getApellidoString());
-			this.txtEdad.setText(String.valueOf(p.getEdad()));
+			this.txtTitulo.setText(p.getNombreString());
+			this.txtGenero.setText(p.getApellidoString());
+			this.txtPlataforma.setText(String.valueOf(p.getEdad()));
 		}
 	}
 	
 	@FXML
-	private void modificarPersona(ActionEvent event) {
+	private void modificarJuego(ActionEvent event) {
 		Persona p = this.tblPersonas.getSelectionModel().getSelectedItem();
 		if (p == null) {
 			Alert alert = new Alert(AlertType.WARNING);
@@ -91,7 +95,7 @@ public class PersoaController implements Initializable {
 			alert.showAndWait();
 		} else {			
 			try {
-				Persona m = new Persona(this.txtNombre.getText(), this.txtApellidos.getText(), Integer.parseInt(this.txtEdad.getText()));
+				Persona m = new Persona(this.txtTitulo.getText(), this.txtGenero.getText(), Integer.parseInt(this.txtPlataforma.getText()));
 				
 				if (this.personas.contains(m)) {
 					Alert alert = new Alert(AlertType.WARNING);
@@ -119,7 +123,7 @@ public class PersoaController implements Initializable {
 	}
 	
 	@FXML
-	private void eliminarPersona(ActionEvent event) {
+	private void eliminarJuego(ActionEvent event) {
 		Persona p = this.tblPersonas.getSelectionModel().getSelectedItem();
 		if (p == null) {
 			Alert alert = new Alert(AlertType.WARNING);
@@ -139,9 +143,9 @@ public class PersoaController implements Initializable {
 		
 		this.personas = FXCollections.observableArrayList();
 		
-		colNombre.setCellValueFactory(new PropertyValueFactory("nombreString"));
-		colApellidos.setCellValueFactory(new PropertyValueFactory("apellidoString"));
-		colEdad.setCellValueFactory(new PropertyValueFactory("edad"));
+		colTitulo.setCellValueFactory(new PropertyValueFactory("nombreString"));
+		colGenero.setCellValueFactory(new PropertyValueFactory("apellidoString"));
+		colPlataforma.setCellValueFactory(new PropertyValueFactory("edad"));
 		
 	}
 

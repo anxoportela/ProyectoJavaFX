@@ -3,8 +3,6 @@ package com.proyecto.javafx.app;
 import java.io.IOException;
 import java.net.URL;
 
-import com.proyecto.javafx.app.App;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,7 +17,7 @@ import javafx.stage.Stage;
 			Pane ventanaPane;		
 			
 			FXMLLoader loader = new FXMLLoader();
-			URL xmlUrl = App.class.getResource("PersoaScene.fxml");
+			URL xmlUrl = App.class.getResource("Juegos.fxml");
 			loader.setLocation(xmlUrl);
 			try {
 				ventanaPane = loader.load();
