@@ -3,6 +3,9 @@ package com.proyecto.javafx.app;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.proyecto.javafx.modelo.Juego;
+import com.proyecto.javafx.modelo.JuegoDAO;
+
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -70,13 +73,9 @@ public class JuegosDiagController implements Initializable {
 
 	@FXML
 	private void guardar(ActionEvent event) {
-		String multi;
+		String multi = rdbSi.isSelected() ? "Sí": "No";
 		Alert alert;
-		if (rdbSi.isSelected()) {
-			multi = "Sí";
-		} else {
-			multi = "No";
-		}
+
 		Juego j = new Juego(this.txtTitulo.getText(), this.comboBoxGenero.getValue(),
 				this.comboBoxPlataforma.getValue(), multi);
 		if (!this.juegos.contains(j)) {
@@ -94,7 +93,7 @@ public class JuegosDiagController implements Initializable {
 		} else {
 			alert = new Alert(AlertType.ERROR);
 			alert.setHeaderText((String) null);
-			alert.setTitle("Erro");
+			alert.setTitle("Error");
 			alert.setContentText("El juego ya existe");
 			alert.showAndWait();
 		}

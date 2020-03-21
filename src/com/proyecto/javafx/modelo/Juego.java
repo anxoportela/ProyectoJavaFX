@@ -1,4 +1,4 @@
-package com.proyecto.javafx.app;
+package com.proyecto.javafx.modelo;
 
 import java.util.Objects;
 

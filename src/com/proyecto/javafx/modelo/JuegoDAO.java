@@ -1,4 +1,4 @@
-package com.proyecto.javafx.app;
+package com.proyecto.javafx.modelo;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -6,8 +6,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.proyecto.javafx.app.ConexionPool;
 
 /**
  *

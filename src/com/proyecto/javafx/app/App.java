@@ -13,11 +13,11 @@ import javafx.stage.Stage;
 		@Override
 		public void start(Stage primaryStage) {
 
-			primaryStage.setTitle("Ola Mundo!!!");
+			primaryStage.setTitle("Base de datos ViedoJuegos");
 			Pane ventanaPane;		
 			
 			FXMLLoader loader = new FXMLLoader();
-			URL xmlUrl = App.class.getResource("Juegos.fxml");
+			URL xmlUrl = App.class.getResource("/com/proyecto/javafx/vista/Juegos.fxml");
 			loader.setLocation(xmlUrl);
 			try {
 				ventanaPane = loader.load();
