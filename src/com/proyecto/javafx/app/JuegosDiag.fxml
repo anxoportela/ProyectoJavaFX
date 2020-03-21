@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<AnchorPane id="AnchorPane" focusTraversable="true" maxHeight="408.0" maxWidth="404.0" minHeight="279.0" minWidth="185.0" prefHeight="279.0" prefWidth="362.0" snapToPixel="false" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto.javafx.app.JuegosDiagController">
+<AnchorPane id="AnchorPane" focusTraversable="true" maxHeight="408.0" maxWidth="404.0" minHeight="408.0" minWidth="404.0" prefHeight="408.0" prefWidth="404.0" snapToPixel="false" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto.javafx.app.JuegosDiagController">
    <children>
    		<Label layoutX="20.0" layoutY="15.0" text="Título" />
       	<Label layoutX="38.0" layoutY="80.0" text="Género" />
