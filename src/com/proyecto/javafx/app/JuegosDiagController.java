@@ -52,11 +52,14 @@ public class JuegosDiagController implements Initializable {
     }
 
     public void inicializarAtributos(ObservableList<Juego> juegos) {
-        this.juegos = juegos;
-        this.juego = pSeleccionada;
-        
-        
+        this.juegos = juegos;       
     }
+    
+    public void inicializarAtributos(ObservableList<Juego> juegos, Juego j) {
+		this.juegos = juegos;
+		this.juego = j;
+		this.txtTitulo.setText(j.getTitulo());
+	}
     
     @FXML
     private void salir(ActionEvent event) {
@@ -67,10 +70,14 @@ public class JuegosDiagController implements Initializable {
     
     @FXML
     private void guardar(ActionEvent event) {
-        rdbSi.setUserData("Sí");
-        rdbNo.setUserData("No");
         try {
-            Juego j = new Juego(this.txtTitulo.getText(), this.comboBoxGenero.getValue(), this.comboBoxPlataforma.getValue(), grp1.getSelectedToggle().getUserData().toString());
+			String multi;
+			if (rdbSi.isSelected()) {
+				multi = "Sí";
+			} else {
+				multi = "No";
+			}
+            Juego j = new Juego(this.txtTitulo.getText(), this.comboBoxGenero.getValue(), this.comboBoxPlataforma.getValue(), multi);
             if (this.juegos.contains(j)) {
                 Alert alert = new Alert(AlertType.WARNING);
                 alert.setHeaderText(null);
@@ -94,5 +101,9 @@ public class JuegosDiagController implements Initializable {
             alert.showAndWait();
         }
     }
+    
+    public Juego getJuego() {
+		return this.juego;
+	}
 
 }
