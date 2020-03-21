@@ -39,12 +39,12 @@
         			</FXCollections>
     			</items>
 		</ComboBox>
-		<RadioButton fx:id="rdbSi" layoutX="117.0" layoutY="179.0" mnemonicParsing="false" selected="true" text="Sí" toggleGroup="$grp1">
+		<RadioButton fx:id="rdbSi" layoutX="117.0" layoutY="179.0" mnemonicParsing="false" selected="true" userData="Sí" toggleGroup="$grp1">
 			<toggleGroup>
 				<ToggleGroup fx:id="grp1" />
 			</toggleGroup>
 		</RadioButton>
-		<RadioButton fx:id="rdbNo" layoutX="194.0" layoutY="179.0" mnemonicParsing="false" text="No" toggleGroup="$grp1" />
+		<RadioButton fx:id="rdbNo" layoutX="194.0" layoutY="179.0" mnemonicParsing="false" userData="No" toggleGroup="$grp1" />
       <Button fx:id="btnGuardar" layoutX="20.0" layoutY="226.0" mnemonicParsing="false" onAction="#guardar" prefHeight="26.0" prefWidth="115.0" text="Guardar" />
       <Button fx:id="btnSalir" layoutX="215.0" layoutY="226.0" mnemonicParsing="false" onAction="#salir" prefHeight="26.0" prefWidth="115.0" text="Salir" />
    </children>

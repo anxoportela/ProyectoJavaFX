@@ -8,26 +8,41 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class JuegosDiagController implements Initializable {
 	
 	@FXML
-    private TextField txtEdad;
-    @FXML
-    private TextField txtNombre;
-    @FXML
-    private TextField txtApellidos;
+	private TextField txtTitulo;
+	
+	@FXML
+	private ComboBox<String> comboBoxGenero;
+	
+	@FXML
+	private ComboBox<String> comboBoxPlataforma;		
     
-    @FXML
-    private TextField btnGuardar;
-    @FXML
-    private TextField btnSalir;
+	@FXML
+	private Button  btnGuardar;
+	
+	@FXML
+	private Button btnSalir;
     
-    private Juego juego;
+    @FXML 
+    private RadioButton rdbSi;
     
+    @FXML 
+    private RadioButton rdbNo;
+    
+    @FXML 
+    private ToggleGroup grp1;
+    
+    private Juego juego;    
     private ObservableList<Juego> juegos;
     
     @Override
@@ -52,21 +67,22 @@ public class JuegosDiagController implements Initializable {
     
     @FXML
     private void guardar(ActionEvent event) {
-        
+        rdbSi.setUserData("Sí");
+        rdbNo.setUserData("No");
         try {
-            Juego j = new Juego(this.txtNombre.getText(), this.txtApellidos.getText(), Integer.parseInt(this.txtEdad.getText()));
+            Juego j = new Juego(this.txtTitulo.getText(), this.comboBoxGenero.getValue(), this.comboBoxPlataforma.getValue(), grp1.getSelectedToggle().getUserData().toString());
             if (this.juegos.contains(j)) {
                 Alert alert = new Alert(AlertType.WARNING);
                 alert.setHeaderText(null);
                 alert.setTitle("Error");
-                alert.setContentText("Persoa xa existente");
+                alert.setContentText("El juego ya existe");
                 alert.showAndWait();
             } else {
                 this.juego = j;
                 Alert alert = new Alert(AlertType.INFORMATION);
                 alert.setHeaderText(null);
                 alert.setTitle("Perfecto");
-                alert.setContentText("Persoa creada correctamente");
+                alert.setContentText("Juego añadido correctamente");
                 alert.showAndWait();
             }
             
@@ -74,7 +90,7 @@ public class JuegosDiagController implements Initializable {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setTitle("Error");
-            alert.setContentText("Algún dato con formato incorrecto");
+            alert.setContentText("Datos incorrectos");
             alert.showAndWait();
         }
     }
